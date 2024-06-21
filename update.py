@@ -52,7 +52,7 @@ if len(DATABASE_URL) == 0:
 if DATABASE_URL is not None:
     try:
         conn = MongoClient(DATABASE_URL, server_api=ServerApi("1"))
-        db = conn.mltb
+        db = conn.mltbxyz
         old_config = db.settings.deployConfig.find_one({"_id": bot_id})
         config_dict = db.settings.config.find_one({"_id": bot_id})
         if old_config is not None:
@@ -61,7 +61,7 @@ if DATABASE_URL is not None:
     except Exception as e:
         log_error(f"Database ERROR: {e}")
 
-UPSTREAM_REPO = "https://github.com/SN-Abdullah-Al-Noman/MirroGram"
+UPSTREAM_REPO = "https://github.com/iky9612/MirrorGram"
 UPSTREAM_BRANCH = "main"
 
 if UPSTREAM_REPO:
